@@ -24,7 +24,15 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+registerRoute(({ request }) => request.mode === 'navigate', pageCache),
+new StaleWhileRevalidate({
+  cacheName:"cache1",
+  plugins:[
+    new CacheableResponsePlugin({
+      status:[0,200]
+    })
+  ]
+});
 
 // TODO: Implement asset caching
 registerRoute();
