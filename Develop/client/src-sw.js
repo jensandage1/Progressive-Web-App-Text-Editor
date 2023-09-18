@@ -24,15 +24,25 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-registerRoute(({ request }) => request.mode === 'navigate', pageCache),
-new StaleWhileRevalidate({
-  cacheName:"cache1",
-  plugins:[
+registerRoute(({ request }) => request.mode === 'navigate', pageCache);
+
+//Implement asset caching
+const assetsCache = new CacheFirst({
+  cacheName: 'assets-cache',
+  plugins: [
     new CacheableResponsePlugin({
-      status:[0,200]
-    })
-  ]
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 30 * 24 * 60 * 60,
+    }),
+  ],
 });
 
-// TODO: Implement asset caching
-registerRoute();
+registerRoute(
+  /\.(?:js|css|png|jpg|jpeg|svg|gif|ico)$/,
+  assetsCache
+);
+
+//fallback for when offline
+offlineFallback();
