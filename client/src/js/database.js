@@ -23,7 +23,6 @@ export const putDb = async (content) => {
   try {
   console.log('updating database');
   const jateDb = await openDB('jate', 1);
-  console.log("hello", content);
   const tx = jateDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
   const request = store.put({id: 1, value: content});
