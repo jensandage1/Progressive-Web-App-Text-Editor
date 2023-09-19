@@ -1,41 +1,36 @@
-# Text Editor Starter Code
+# JATE-Text-Editor
 
-acceptance criteria:
 
-GIVEN a text editor web application
+## Description:
+    This is a text editing application that will let you take notes and will retrieve them when you come back to the app!  
 
-<!-- WHEN I open my application in my editor
-THEN I should see a client server folder structure -->
+## Table of Contents:
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
-<!-- WHEN I run `npm run start` from the root directory
-THEN I find that my application should start up the backend and serve the client -->
-<!-- 
-WHEN I run the text editor application from my terminal
-THEN I find that my JavaScript files have been bundled using webpack -->
+## Installation
+For installation for development, navigate to the root folder and run "npm install" to install "express", "if-env" , "concurrently", and "nodemon". Then navigate to the client directory and run npm install to install "webpack" "babel" "css-loader" "code-mirror-themes", and "idb". 
 
-<!-- WHEN I run my webpack plugins
-THEN I find that I have a generated HTML file, service worker, and a manifest file -->
+From the deployed app, click the "install" button on the top left of the window to install the application to your computer. 
 
-WHEN I use next-gen JavaScript in my application
-THEN I find that the text editor still functions in the browser without errors
+## Usage
+This is a simple text editor. You can type any text you want and it will remain there if you refresh the page or re-open the installed app. You can also go between the web app and installed app and get the same content. 
 
-<!-- WHEN I open the text editor
-THEN I find that IndexedDB has immediately created a database storage -->
+## Credits
 
-<!-- WHEN I enter content and subsequently click off of the DOM window
-THEN I find that the content in the text editor has been saved with IndexedDB -->
+## License  
 
-<!-- WHEN I reopen the text editor after closing it
-THEN I find that the content in the text editor has been retrieved from our IndexedDB -->
+## Tests
 
-<!-- WHEN I click on the Install button
-THEN I download my web application as an icon on my desktop -->
 
-<!-- WHEN I load my web application
-THEN I should have a registered service worker using workbox -->
+## Questions
 
-WHEN I register a service worker
-THEN I should have my static assets pre cached upon loading along with subsequent pages and static assets
+github repo:
+https://github.com/jensandage1/Progressive-Web-App-Text-Editor
 
-WHEN I deploy to Heroku
-THEN I should have proper build scripts for a webpack application
+Deployed App:
+https://jate-text-editor-mod-19-41afa2aa7929.herokuapp.com/
+
+![Image of the jate application with text](image.png)
